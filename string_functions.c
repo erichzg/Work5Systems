@@ -53,6 +53,9 @@ char * strchr2(char *s, char c) {
     }
     s++;
   }
+  if (!c) {
+    return s;
+  }
   return NULL;
 }
 
