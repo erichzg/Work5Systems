@@ -32,20 +32,6 @@ char * strcat2(char *dest, char *source) {
   return placeholder;
 }
 
-int strcmp2(char *s1, char *s2) {
-  while (*s1 * *s2) {
-    if (*s1 == *s2) {
-      s1++;
-      s2++;
-    }
-    else {
-      return *s1 - *s2;
-    }
-  }
-  return 0;
-}
-
-
 char * strchr2(char *s, char c) {
   while (*s) {
     if (*s == c) {
@@ -59,6 +45,19 @@ char * strchr2(char *s, char c) {
   return NULL;
 }
 
+int strcmp2(char *s1, char *s2) {
+  while (*s1 * *s2) {
+    if (*s1 == *s2) {
+      s1++;
+      s2++;
+    }
+    else {
+      return *s1 - *s2;
+    }
+  }
+  return 0;
+}
+
 int main() {
   char s1[] = "?W?";
   char s2[] = "hello";
@@ -68,7 +67,7 @@ int main() {
   printf("s3: [%s]\n\n", s3);
   
   printf("Testing strlen(s2):\n");
-  printf("[standard]: %d\n", strlen(s2));
+  printf("[standard]: %d\n", (int) strlen(s2));
   printf("[ours]: %d\n\n", strlen2(s2));
 
   printf("Testing strcpy(s1, s2):\n");
@@ -87,7 +86,7 @@ int main() {
   printf("[standard]: %p\n", strchr(s1, 0));
   printf("[ours]: %p\n\n", strchr2(s1, 0));
 
-  printf("Testing strcmp(s1, 'z'):\n");
-  printf("[standard]: %d\n", strcmp(s1, 'z'));
-  printf("[ours]: %d\n\n", strcmp2(s1, 'z'));
+  printf("Testing strcmp(s1, \"z\"):\n");
+  printf("[standard]: %d\n", strcmp(s1, "z"));
+  printf("[ours]: %d\n\n", strcmp2(s1, "z"));
 }
