@@ -47,13 +47,11 @@ char * strchr2(char *s, char c) {
 
 int strcmp2(char *s1, char *s2) {
   while (*s1 * *s2) {
-    if (*s1 == *s2) {
-      s1++;
-      s2++;
-    }
-    else {
+    if (*s1 != *s2) {
       return *s1 - *s2;
     }
+    s1++;
+    s2++;
   }
   return 0;
 }
