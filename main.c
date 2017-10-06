@@ -4,9 +4,9 @@
 #include "headers.h"
 
 int main() {
-  char s1[] = "?W?";
-  char s2[] = "hello";
-  char s3[] = "goodbye";
+  char s1[50] = "?W?";
+  char s2[50] = "hello";
+  char s3[50] = "goodbye";
   printf("s1: [%s]\n", s1);
   printf("s2: [%s]\n", s2);
   printf("s3: [%s]\n\n", s3);
